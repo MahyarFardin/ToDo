@@ -15,7 +15,7 @@ const App = () => {
     <div className='App'>
       <h1>ToDo App</h1>
       <Inputs toDoJobs={toDoJobs} inBoxText={inBoxText} setInBoxText={setInBoxText} setToDoJobs={setToDoJobs} />
-      <ToDoList />
+      <ToDoList  setToDoJobs={setToDoJobs} toDoJobs={toDoJobs}/>
     </div>
   );
 }

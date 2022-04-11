@@ -7,7 +7,7 @@ const Inputs = ({ inBoxText, setInBoxText, setToDoJobs, toDoJobs }) => {
         e.preventDefault()
         
         setToDoJobs([...toDoJobs,
-        { text: inBoxText, completed: false }
+        { text: inBoxText, completed: false, id:Math.floor(Math.random()*100) }
         ])
 
         setInBoxText("")
