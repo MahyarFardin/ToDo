@@ -1,0 +1,30 @@
+.input-part {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input{
+  text-align: center;
+  border: none;
+  font-size: 24px;
+}
+select{
+  background-color: white;
+  font-size: 24px;
+  justify-content: start;
+  margin-left: 1em;
+}
+
+button {
+  border: none;
+  color: #ff6f47;
+  background: #f7fffe;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #ff6f47;
+  color: white;
+}
