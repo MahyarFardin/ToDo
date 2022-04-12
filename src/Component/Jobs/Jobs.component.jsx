@@ -3,13 +3,23 @@ import "./Jobs.style.css";
 
 const Jobs = ({ text, todos, todo, setToDoJobs }) => {
 
-    const deletHandeler = () => { setToDoJobs((todos.map((el) => console.log(el))))};
-    const doneHandeler = () => { };
+    //removing from our list
+    const deletHandeler = () => { setToDoJobs((todos.filter((el) => todo.id !== el.id))) };
+
+    //done handeler
+    const doneHandeler = () => {
+        setToDoJobs(todos.map(
+            (el => {
+                if (todo.id === el.id) {
+                    return { ...el, completer: !el.completed };
+                }
+            })))
+    };
 
     return (
         <div className="todo">
-            <li className="todo-item">{text}</li>
-            <button className="complete-btn">
+            <li className={`todo-item ${todo.completed ? "completed":""}`}>{text}</li>
+            <button onClick={doneHandeler} className="complete-btn">
                 <i className="fas fa-check"></i>
             </button>
             <button onClick={deletHandeler} className="trash-btn">
