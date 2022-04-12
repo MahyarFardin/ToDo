@@ -5,8 +5,7 @@ import Inputs from './Component/Inputs/Inputs.component';
 import ToDoList from './Component/List/ToDoList.component';
 
 const App = () => {
-  //My Variables Using Hooks
-
+  //States
   const [inBoxText, setInBoxText] = useState("");
   const [toDoJobs, setToDoJobs] = useState([]);
   const [filterType, setFilterType] = useState("All");
@@ -25,10 +24,33 @@ const App = () => {
     }
   };
 
+  // run only one time
+  useEffect(() => {
+    getLocal();
+  }, []);
+
   // call filter handeler when items chainge
   useEffect(() => {
     filterHandeler();
+    saveToLocal();
   }, [toDoJobs, filterType]);
+
+
+  // Save to local
+  const saveToLocal = () => {
+    localStorage.setItem("toDoJobs", JSON.stringify(toDoJobs));
+  }
+
+  // Get local todos
+  const getLocal = () => {
+    if (localStorage.getItem("toDoJobs") === null) {
+      localStorage.setItem("toDoJobs", JSON.stringify([]));
+    }
+    else {
+      let storageToDo = JSON.parse(localStorage.getItem("toDoJobs"));
+      setToDoJobs(storageToDo);
+    }
+  }
 
   //Return of this functions
   return (
