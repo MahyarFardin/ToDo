@@ -1,7 +1,7 @@
 import React from "react";
 import "./Inputs.style.css";
 
-const Inputs = ({ inBoxText, setInBoxText, setToDoJobs, toDoJobs }) => {
+const Inputs = ({ inBoxText, setInBoxText, setToDoJobs, toDoJobs, setFilterType}) => {
     const inputHandeler = (e) => { setInBoxText(e.target.value) };
     const buttonHandeler = (e) => {
         e.preventDefault()
@@ -11,6 +11,11 @@ const Inputs = ({ inBoxText, setInBoxText, setToDoJobs, toDoJobs }) => {
         ])
 
         setInBoxText("")
+    };
+
+    //Filter Handeler
+    const filterHandeler=(e)=>{
+        setFilterType(e.target.value)
     };
 
     return (
@@ -23,7 +28,7 @@ const Inputs = ({ inBoxText, setInBoxText, setToDoJobs, toDoJobs }) => {
                 </svg>
             </button>
 
-            <select>
+            <select onClick={filterHandeler}>
                 <option value="All">All</option>
                 <option value="Completed">Completed</option>
                 <option value="UnDone">UnDone</option>

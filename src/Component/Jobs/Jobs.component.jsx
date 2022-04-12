@@ -1,24 +1,28 @@
 import React from "react";
 import "./Jobs.style.css";
 
-const Jobs = ({ text, todos, todo, setToDoJobs }) => {
+const Jobs = ({ text, todos, todo, setToDoJobs, setFilterType }) => {
 
     //removing from our list
-    const deletHandeler = () => { setToDoJobs((todos.filter((el) => todo.id !== el.id))) };
+    const deletHandeler = () => {
+        setToDoJobs((todos.filter((el) =>
+            todo.id !== el.id)))
+    };
 
     //done handeler
     const doneHandeler = () => {
         setToDoJobs(todos.map(
             (el => {
                 if (todo.id === el.id) {
-                    return { ...el, completer: !el.completed };
+                    return { ...el, completed: !el.completed };
                 }
+                return el;
             })))
     };
 
     return (
         <div className="todo">
-            <li className={`todo-item ${todo.completed ? "completed":""}`}>{text}</li>
+            <li className={`todo-item ${todo.completed ? "completed" : ""}`}>{text}</li>
             <button onClick={doneHandeler} className="complete-btn">
                 <i className="fas fa-check"></i>
             </button>

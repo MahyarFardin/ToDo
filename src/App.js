@@ -9,13 +9,14 @@ const App = () => {
 
   const [inBoxText, setInBoxText] = useState("");
   const [toDoJobs, setToDoJobs] = useState([]);
+  const [filterType, setFilterType] = useState("All");
 
   //Return of this functions
   return (
     <div className='App'>
       <h1>ToDo App</h1>
-      <Inputs toDoJobs={toDoJobs} inBoxText={inBoxText} setInBoxText={setInBoxText} setToDoJobs={setToDoJobs} />
-      <ToDoList  setToDoJobs={setToDoJobs} toDoJobs={toDoJobs}/>
+      <Inputs setFilterType={setFilterType} toDoJobs={toDoJobs} inBoxText={inBoxText} setInBoxText={setInBoxText} setToDoJobs={setToDoJobs} />
+      <ToDoList setToDoJobs={setToDoJobs} toDoJobs={toDoJobs}/>
     </div>
   );
 }
