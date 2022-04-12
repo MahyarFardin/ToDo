@@ -5,25 +5,30 @@
 }
 
 body {
-  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  background-image: linear-gradient(120deg, #92BA92 0%, #78938A 100%);
   color: white;
-  font-family: "Poppins", sans-serif;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 h1{
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-shadow: 4px 4px #F1DDBF;
   font-family: 'Pacifico', cursive;
   padding-top: 2em;
   text-align:  center;
 }
 
-.filter-todo {
-  padding: 1rem;
+h1:hover{
+  color: #F1DDBF;
+  text-shadow: 2px 2px white;
+  transform: scale(1.05);
+  transition: 1s;
 }
 
-.fall {
-  transform: translateY(10rem) rotateZ(20deg);
-  opacity: 0;
+.filter-todo {
+  padding: 1rem;
 }
 
 /*CUSTOM SELECTOR */
@@ -45,8 +50,7 @@ select {
   overflow: hidden;
 }
 select {
-  color: #ff6f47;
-  font-family: "Poppins", sans-serif;
+  color: #525E75;
   cursor: pointer;
   width: 12rem;
 }
@@ -57,7 +61,6 @@ select {
   top: 0;
   right: 0;
   padding: 1rem;
-  background: #ff6f47;
   cursor: pointer;
   pointer-events: none;
 }

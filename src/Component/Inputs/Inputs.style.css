@@ -4,27 +4,39 @@
     justify-content: center;
     align-items: center;
 }
+input, select, .plus{
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
 input{
+  font-family: 'Pacifico', cursive;
+  border-radius: 2em;
   text-align: center;
   border: none;
-  font-size: 24px;
+  font-size: 18px;
 }
+
 select{
+  font-family: 'Pacifico', cursive;
+  font-size: 18px;
+  border-radius: 2em;
   background-color: white;
-  font-size: 24px;
   justify-content: start;
   margin-left: 1em;
+  padding-left: 1em;
 }
 
 button {
+  border-radius: 2em;
+  padding: 2px;
+  display: flex;
   border: none;
-  color: #ff6f47;
+  color: #525E75;
   background: #f7fffe;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 button:hover {
-  background: #ff6f47;
+  background: #525E75;
   color: white;
 }
